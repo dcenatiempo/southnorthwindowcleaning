@@ -1,19 +1,21 @@
 <template>
   <a
     :href="'tel:+01-' + phone"
+    :class="[colorMode, {margin: showIcon && showNumber}]"
     rel="nofollow">
-    <phone-icon
-      v-if="compact"
-      class="icon"/>
-    <span v-else>
+    <span v-show="showNumber">
       {{ phone }}
     </span>
+    <phone-icon
+      v-show="showIcon"
+      class="icon"/>
   </a>
 </template>
 
 <script>
 import PhoneIcon from '~/components/Phone.vue'
 export default {
+  name: 'PhoneLink',
   components: {
     PhoneIcon
   },
@@ -22,9 +24,17 @@ export default {
       type: String,
       default: ''
     },
-    compact: {
+    showIcon: {
       type: Boolean,
       default: false
+    },
+    showNumber: {
+      type: Boolean,
+      default: true
+    },
+    colorMode: {
+      type: String,
+      default: 'dark'
     }
   },
   data() {
@@ -35,10 +45,17 @@ export default {
 
 <style lang="scss" scoped>
 a {
-  color: white;
   text-decoration: none;
   display: flex;
   align-items: center;
+
+  &.dark {
+    color: black;
+  }
+
+  &.light {
+    color: white;
+  }
 
   .icon {
     font-size: 0;
@@ -46,6 +63,12 @@ a {
     animation-duration: 5s;
     animation-delay: 2s;
     animation-iteration-count: infinite;
+  }
+
+  &.margin {
+    .icon {
+      margin-left: 1rem;
+    }
   }
 
   @keyframes look-at-me {

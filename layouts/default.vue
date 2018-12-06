@@ -1,8 +1,8 @@
 <template>
   <div class="page-wrapper">
-    <site-header :phone="phone"/>
+    <site-header :phone="$store.state.phone"/>
     <nuxt/>
-    <site-footer :phone="phone"/>
+    <site-footer :phone="$store.state.phone"/>
   </div>
 </template>
 
@@ -15,11 +15,7 @@ export default {
     SiteHeader,
     SiteFooter
   },
-  data() {
-    return {
-      phone: '801-555-1212'
-    }
-  }
+  data() {}
 }
 </script>
 

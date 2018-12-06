@@ -1,16 +1,21 @@
 <template>
-  <Footer>
-    <span>&copy; 2018 South North Window Cleaning </span>
-    <a
-      :href="'tel:+01-' + phone"
-      rel="nofollow">
-      {{ phone }}</a>
-  </Footer>
+  <footer>
+    <span class="copy">&copy; 2018 South North Window Cleaning </span>
+    <phone-link
+      :phone="phone"
+      :show-icon="false"
+      :show-number="true"
+      color-mode="dark"/>
+  </footer>
 </template>
 
 <script>
+import PhoneLink from '~/components/PhoneLink.vue'
+
 export default {
-  components: {},
+  components: {
+    PhoneLink
+  },
   props: {
     phone: {
       type: String,
@@ -23,5 +28,16 @@ export default {
 }
 </script>
 
-<style>
+<style scoped lang="scss">
+footer {
+  padding: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  margin-top: 1rem;
+
+  .copy {
+    padding-right: 1rem;
+  }
+}
 </style>

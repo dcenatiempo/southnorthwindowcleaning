@@ -3,7 +3,9 @@
     <h1>South North Window Cleaning</h1>
     <phone-link
       :phone="phone"
-      :compact="compact"/>
+      :show-icon="true"
+      :show-number="!compact"
+      color-mode="light"/>
   </header>
 </template>
 

@@ -22,7 +22,7 @@
     </section>
     <section>
       <h1>Service Areas</h1>
-      <ul>
+      <ul class="service-areas">
         <li
           v-for="area in areas"
           :key="area.replace(/\s/gi, '-')">
@@ -43,16 +43,7 @@ export default {
     TestimonialCard
   },
   data() {
-    return {
-      // areas: () => {
-      //   let pages = []
-      //   let areas = this.$store.state.areas
-      //   for (let key in areas) {
-      //     pages.push(areas[key].name)
-      //   }
-      //   return pages
-      // }
-    }
+    return {}
   },
   computed: {
     areas() {
@@ -104,6 +95,18 @@ section {
     .testimonial-card {
       flex-basis: 200px;
       flex-grow: 1;
+    }
+  }
+
+  ul.service-areas {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    padding: 0;
+
+    li {
+      list-style: none;
+      padding: 5px 10px;
     }
   }
 }
