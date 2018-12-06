@@ -22,6 +22,8 @@ const Bountiful = 'Bountiful',
   Ogden = 'Ogden'
 
 const state = {
+  width: 1000,
+  height: 1000,
   phone: '(801) 699-9664',
   email: 'devanfields1@gmail.com',
   areas: {
@@ -258,10 +260,18 @@ function cityTestimonialGetters(areas, testimonials) {
 
 const getters = cityTestimonialGetters(state.areas, state.testimonials)
 
+const mutations = {
+  setSize(state, { width, height }) {
+    state.width = width
+    state.height = height
+  }
+}
+
 const createStore = () => {
   return new Vuex.Store({
     state: () => state,
-    getters: getters
+    getters,
+    mutations
   })
 }
 
