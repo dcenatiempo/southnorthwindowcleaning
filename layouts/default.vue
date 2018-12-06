@@ -1,8 +1,8 @@
 <template>
   <div class="page-wrapper">
-    <site-header/>
+    <site-header :phone="phone"/>
     <nuxt/>
-    <site-footer/>
+    <site-footer :phone="phone"/>
   </div>
 </template>
 
@@ -14,6 +14,11 @@ export default {
   components: {
     SiteHeader,
     SiteFooter
+  },
+  data() {
+    return {
+      phone: '801-555-1212'
+    }
   }
 }
 </script>
@@ -45,6 +50,7 @@ html {
 
   main {
     flex: 1 1 auto;
+    margin-top: -40px;
   }
 }
 </style>

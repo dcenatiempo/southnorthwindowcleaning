@@ -13,9 +13,12 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
+    "@nuxtjs/axios": "^5.0.0",
+    "@nuxtjs/moment": "^1.0.0",
     "cross-env": "^5.2.0",
+    "moment": "^2.22.2",
     "nuxt": "^2.0.0",
-    "@nuxtjs/axios": "^5.0.0"
+    "vue-material-design-icons": "^2.4.0"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.1",

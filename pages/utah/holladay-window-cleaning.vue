@@ -1,6 +1,6 @@
 <template>
   <area-page
-    :area="$store.state.areas.saltLakeCity"/>
+    :area="$store.state.areas.holladay"/>
 </template>
 
 <script>
